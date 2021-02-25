@@ -93,15 +93,15 @@ function genHashtags() {
   const words = [];
 
   for (var i = 0; i < 30; i++) {
-    if (words.indexOf(randomNum()) == -1) {
-      words.push(randomNum());
+    var word = randomNum();
+    console.log(words.indexOf(word));
+    if (words.indexOf(word) == -1) {
+      words.push(word);
     } else {
-      i -= 1;
+      i--;
       continue;
     }
   }
-
-  console.log(words.join(" "));
   hashtagText = document.querySelector(".hashtags");
   hashtagText.textContent = words.join(" ");
 }
